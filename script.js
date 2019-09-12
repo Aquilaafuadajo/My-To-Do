@@ -11,15 +11,16 @@ function inputspace(){
 }
 
 function createListElement() {
+	var del = document.createElement("i");
+	del.classList.add('fas', 'fa-trash-alt');
+
 	var li = document.createElement("li");
 	text = input.value;
 	li.appendChild(document.createTextNode(text));
+	li.appendChild(del);
 	ul.appendChild(li);
 	input.value = "";
-	
-	var del = document.createElement("button");
-	del.appendChild(document.createTextNode("Delete"));
-	li.appendChild(del);
+	// del.appendChild(document.createTextNode("Delete"));
 	
 	function toggle(){
 		li.classList.toggle("done");
